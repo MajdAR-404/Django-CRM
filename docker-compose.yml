@@ -6,13 +6,13 @@ services:
     # volumes:
     #   - /home/db:/var/lib/postgresql/data
     env_file: 
-      - ./ENV.md
+      - ./db.env
 
   web:
     build: .
     image: micropyramid/django-crm:1
     env_file: 
-      - ./ENV.md
+      - ./db.env
     ports:
       - "8001:8000"
     depends_on:
